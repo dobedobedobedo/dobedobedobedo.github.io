@@ -11,15 +11,57 @@
         text-align: center;
         background-color: #f0f0f0;
         padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
       }
 
       .artistic-text {
-        font-size: 80px; /* 增加字体大小 */
-        color: #ff69b4; /* 粉色 */
+        font-size: 4rem;
+        color: #ff69b4;
+        margin-top: 20px; /* 适度增加上边距 */
+      }
+
+      /* 样式按钮 */
+      .surprise-button {
+        padding: 20px 40px;
+        background-color: #4caf50;
+        color: white;
+        font-size: 2rem;
+        border: none;
+        cursor: pointer;
+        margin-top: 40px; /* 适度增加上边距 */
+        border-radius: 50px;
+      }
+
+      /* 显示文本 */
+      .hidden-text {
+        display: none;
+        font-family: "Indie Flower", cursive;
+        font-size: 3rem;
+        color: #333;
+        margin-top: 40px;
       }
     </style>
   </head>
   <body>
-    <div class="artistic-text">Hello, Mika</div>
+    <div class="artistic-text" style="margin-bottom: 20px">Hello, Mika</div>
+
+    <!-- 添加按钮 -->
+    <button class="surprise-button" onclick="showSurprise()">chick it</button>
+    <div class="hidden-text" id="surprise-text">Fang Jing Jing is a pig</div>
+
+    <!-- JavaScript 函数，用于在按钮点击时切换文本的显示状态 -->
+    <script>
+      function showSurprise() {
+        var button = document.querySelector(".surprise-button");
+        var text = document.getElementById("surprise-text");
+
+        button.style.display = "none";
+        text.style.display = "block";
+      }
+    </script>
   </body>
 </html>
